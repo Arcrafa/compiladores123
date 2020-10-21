@@ -21,8 +21,8 @@
     <nav class=" nav-extended cyan darken-2">
         <div class="nav-wrapper ">
             <a href="index.html">
-                <img src="default.png" class="">
-                <h1 class="brand-logo center">Validador de claves</h1>
+                <img src="default.png" style="margin-top: 20px;margin-left: 20px;">
+                <h1 class="brand-logo center"> Validador de claves</h1>
             </a>
         </div>
     </nav>
@@ -52,7 +52,7 @@
                                 done_outline
                                 </span>
 
-                                    <span v-if="!isval" class="material-icons  " style="font-size: 100px; color: #fa2f2f;">
+                                <span v-if="!isval" class="material-icons  " style="font-size: 100px; color: #fa2f2f;">
                                 cancel_outline
                                 </span>
                             </div>
@@ -63,11 +63,6 @@
 
                 </div>
             </div>
-
-
-
-
-
 
 
             <div class="col s6">
@@ -100,11 +95,13 @@
 
                                     <div class="">
                                         <span>{{clave.isval}}</span>
-                                <span v-if="clave.isval" class="material-icons " style="font-size: 15px; color: #00fb54;">
+                                        <span v-if="clave.isval" class="material-icons "
+                                              style="font-size: 15px; color: #00fb54;">
                                 done_outline
                                 </span>
 
-                                        <span v-if="!clave.isval" class="material-icons  " style="font-size: 15px; color: #fa2f2f;">
+                                        <span v-if="!clave.isval" class="material-icons  "
+                                              style="font-size: 15px; color: #fa2f2f;">
                                 cancel_outline
                                 </span>
                                     </div>
@@ -162,16 +159,16 @@
         methods: {},
         computed: {
             isval: function () {
-                var exp=/([A-Z]{1})([0-9]{3})([a-z]{3})([!«#$%&‘()*+,-./_"?¡¿|°¬]{3})/
-                var is= false
+                var exp = /([A-Z]{1})([0-9]{3})([a-z]{3})([!«#$%&‘()*+,-./_"?¡¿|°¬]{3})/
+                var is = false
 
-                is=exp.test(this.clave)
+                is = exp.test(this.clave)
                 //console.log(this.clave)
                 //console.log(is)
-                if(this.clave.length==10){
+                if (this.clave.length == 10) {
                     this.historial.push({
-                        str:this.clave,
-                        isval:is
+                        str: this.clave,
+                        isval: is
                     })
                     console.log(this.historial)
                 }
